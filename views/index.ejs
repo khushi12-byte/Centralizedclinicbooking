@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<body>
+  <head>
+    <title>MyHealthAppoitment</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="images/Hlogo.jpg" class="logo"></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="/hospital"  class="active" > Make an appointment </a></li>
+          <li><a href="/login">Operational Login</a></li>
+        </ul>
+      </div>
+    </section>
+    <img src="images/care.jpg" class="care" style="height: 100%; width:100% ;">
+
+    <div id="myModal" class="modal" style="position: absolute;
+    top: 150px;
+    left: 30%;">
+      
+        <div class="modal-content">
+          <button class="close" onclick="closeModal()">&times;</button>
+          <p>Your appointment has been sent. Please wait for the confirmation email/call.....</p>
+        </div>
+    </div>
+
+  <script>
+    debugger
+       var modal = document.getElementById("myModal");
+       (() => {
+      debugger
+
+      confirmationModal = localStorage.getItem("confirmationModal");
+
+      if (confirmationModal) {
+        modal.style.display = "block";
+      } else {
+        modal.style.display = "none";
+      }
+    })()
+
+     function showHospitals() {
+      
+        window.location.href = '/hospital'
+    }
+       
+    function closeModal() {
+      modal.style.display = "none";
+      localStorage.removeItem("confirmationModal");
+    }
+    // When the user clicks the button, open the modal
+    
+  </script>
+  </body>
+</html>

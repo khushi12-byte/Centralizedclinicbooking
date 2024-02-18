@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/appointmentForm.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <title>Appointment Form</title>
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="images/Hlogo.jpg" class="logo" /></a>
+    </section>
+    <h2>Appointment Form</h2>
+    <form id="appointmentForm" action="/saveappointment" method="post">
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="FullName" required /><br /><br />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="Gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+     </select><br /><br />
+
+      <label for="DateOfBirth">Date Of Birth:</label>
+        <input type="date" id="DateOfBirth" name="DateOfBirth" required><br /><br />
+      
+
+      <label for="age">Age: </label>
+      <input type="number" id="age" name="Age" required ><br/><br />
+    
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="Email" required ><br /><br />
+
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" id="phoneNumber" name="PhoneNumber"required><br /><br />
+
+      <label for="appointmentDate">Appointment Date:
+        <input type="date" id="appointmentDate" name="appointmentDate"required><br /><br />
+      </label>
+      <label for="appointmentTime"
+        >Appointment Time:
+        <input
+          type="time"
+          id="appointmentTime"
+          name="appointmentTime"
+          required
+        /><br /><br />
+      </label>
+
+      <button type="submit" class="btn btn-success" onclick="onConfirm(event)">
+        Confirm
+      </button>
+      
+    </form>
+
+    <script>
+      // Get the modal
+      debugger
+      var modal = document.getElementById("myModal");
+      var form = document.getElementById("appointmentForm");
+
+      // Get the button that opens the modal
+      // var btn = document.getElementById("btn-success");
+
+      // Get the <span> element that closes the modal
+      var closeButton = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      function onConfirm(event) {
+        debugger
+        event.preventDefault();
+        localStorage.setItem("confirmationModal", true);
+        // modal.style.display = "block";
+        form.submit();
+      }
+
+      // // When the user clicks on <span> (x), close the modal
+      //   closeButton.onclick = function () {
+      //   modal.style.display = "none";
+      // };
+
+      // // When the user clicks anywhere outside of the modal, close it
+      // window.onclick = function (event) {
+      //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // };
+    </script>
+  </body>
+</html>

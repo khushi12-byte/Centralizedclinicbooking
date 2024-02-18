@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tittle</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"/>
+  </head>
+  <body>
+  <title>Appointment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover,
+    button[type="button"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+    
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="/images/Hlogo.jpg" class="logo" /></a>
+    </section>
+    
+        <form>
+            <form id="appointmentForm" action="/saveappointment" method="post">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="FullName" required value="<%= patientDetails.FullName%>">
+                
+                <label for="gender">Gender:</label>
+                    
+                <select id="gender" name="Gender" required value="<%= patientDetails.Gender %>">
+                    <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                
+                </select>
+
+                  
+                </select><br><br>
+        
+                 <label for="DateOfBirth">Date Of Birth:
+                <input type="date" id="DateOfBirth" name="DateOfBirth" required  value="<%= formattedBirthDate %>">
+                </label>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="Age" required value="<%= patientDetails.Age %>">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" required value="<%= patientDetails.Email %>">
+                
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="PhoneNumber" required value="<%= patientDetails.PhoneNumber %>">
+                
+                <label for="appointmentDate">Appointment Date:
+                <input type="date" id="appointmentDate" name="appointmentDate" required value="<%= formattedAppointmentDate %>">
+                </label>
+                <label for="appointmentTime">Appointment Time:
+                <input type="time" id="appointmentTime" name="appointmentTime" value="<% patientDetails.appointmentTime && patientDetails.appointmentTime.toString() %>">
+                </label>
+        
+                <button type="submit" class="btn btn-success">Confirm</button>
+                
+              </form>
+            
+
+        </form>
+    </div>
+      </section>
+  </body>
+</html>
